@@ -1,0 +1,9 @@
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak_1.Form1.resources
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak_1.Properties.Resources.resources
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak 1.csproj.GenerateResource.Cache
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\bin\Debug\Zadatak 1.exe
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\bin\Debug\Zadatak 1.pdb
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak 1.exe
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak 1.pdb
+F:\Vjezbe programiranje\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak 1.exe
+F:\Vjezbe programiranje\Zadatak 1\Zadatak 1\obj\x86\Debug\Zadatak 1.pdb

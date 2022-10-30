@@ -1,0 +1,10 @@
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\bin\Debug\Zad 5.exe
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\bin\Debug\Zad 5.pdb
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\obj\Debug\Zad_5.Form1.resources
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\obj\Debug\Zad_5.Properties.Resources.resources
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\obj\Debug\Zad 5.csproj.GenerateResource.Cache
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\obj\Debug\Zad 5.exe
+C:\Users\skola\AppData\Local\Temporary Projects\Zad 5\obj\Debug\Zad 5.pdb
+C:\Users\skola\Desktop\Sedmica 3\Zad 5\Zad 5\obj\Debug\Zad 5.exe
+C:\Users\skola\Desktop\Sedmica 3\Zad 5\Zad 5\obj\Debug\Zad 5.pdb

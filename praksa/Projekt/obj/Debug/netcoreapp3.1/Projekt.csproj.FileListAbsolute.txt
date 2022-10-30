@@ -1,0 +1,15 @@
+C:\Users\Amel\source\repos\Projekt\Projekt\bin\Debug\netcoreapp3.1\Projekt.exe
+C:\Users\Amel\source\repos\Projekt\Projekt\bin\Debug\netcoreapp3.1\Projekt.deps.json
+C:\Users\Amel\source\repos\Projekt\Projekt\bin\Debug\netcoreapp3.1\Projekt.runtimeconfig.json
+C:\Users\Amel\source\repos\Projekt\Projekt\bin\Debug\netcoreapp3.1\Projekt.runtimeconfig.dev.json
+C:\Users\Amel\source\repos\Projekt\Projekt\bin\Debug\netcoreapp3.1\Projekt.dll
+C:\Users\Amel\source\repos\Projekt\Projekt\bin\Debug\netcoreapp3.1\Projekt.pdb
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.csprojAssemblyReference.cache
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.Form1.resources
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.csproj.GenerateResource.cache
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.AssemblyInfoInputs.cache
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.AssemblyInfo.cs
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.csproj.CoreCompileInputs.cache
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.dll
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.pdb
+C:\Users\Amel\source\repos\Projekt\Projekt\obj\Debug\netcoreapp3.1\Projekt.genruntimeconfig.cache

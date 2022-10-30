@@ -1,0 +1,8 @@
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\bin\Debug\Zad 1.exe
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\bin\Debug\Zad 1.pdb
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\obj\Debug\Zad_1.Form1.resources
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\obj\Debug\Zad_1.Properties.Resources.resources
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\obj\Debug\Zad 1.csproj.GenerateResource.Cache
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\obj\Debug\Zad 1.exe
+C:\Users\skola\Desktop\Sedmica 3\Zad 1\Zad 1\obj\Debug\Zad 1.pdb

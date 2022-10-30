@@ -1,0 +1,15 @@
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\bin\Debug\Zadatak 5.exe
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\bin\Debug\Zadatak 5.pdb
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak_5.Form1.resources
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak_5.Properties.Resources.resources
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak 5.csproj.GenerateResource.Cache
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak 5.exe
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak 5.pdb
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak 5.exe
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak 5.pdb
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\bin\Debug\Zadatak 5.exe
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\bin\Debug\Zadatak 5.pdb
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak_5.Form1.resources
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak_5.Properties.Resources.resources
+F:\Vjezbe programiranje\Zadatak 5\Zadatak 5\obj\x86\Debug\Zadatak 5.csproj.GenerateResource.Cache

@@ -1,0 +1,8 @@
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\bin\Debug\Zadatak 1 Sesija 2.exe
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\bin\Debug\Zadatak 1 Sesija 2.pdb
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\obj\Debug\zadatak1.Form1.resources
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\obj\Debug\zadatak1.Properties.Resources.resources
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\obj\Debug\Zadatak 1 Sesija 2.csproj.GenerateResource.Cache
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\obj\Debug\Zadatak 1 Sesija 2.exe
+C:\Users\skola\Desktop\Vjezbe programiranje\Zadatak 1 Sesija 2\Zadatak 1 Sesija 2\obj\Debug\Zadatak 1 Sesija 2.pdb

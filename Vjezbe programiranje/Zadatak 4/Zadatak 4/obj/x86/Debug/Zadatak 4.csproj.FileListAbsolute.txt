@@ -1,0 +1,15 @@
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak_4.Form1.resources
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak_4.Properties.Resources.resources
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak 4.csproj.GenerateResource.Cache
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\bin\Debug\Zadatak 4.exe
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\bin\Debug\Zadatak 4.pdb
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak 4.exe
+F:\Programiranje\Prva sedmica\Vjezbe prva sedmica\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak 4.pdb
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak 4.exe
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak 4.pdb
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\bin\Debug\Zadatak 4.exe
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\bin\Debug\Zadatak 4.pdb
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak_4.Form1.resources
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak_4.Properties.Resources.resources
+F:\Vjezbe programiranje\Zadatak 4\Zadatak 4\obj\x86\Debug\Zadatak 4.csproj.GenerateResource.Cache
