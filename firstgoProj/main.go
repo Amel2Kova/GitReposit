@@ -16,11 +16,6 @@ import (
 6.	Napraviti dokumentaciju projekta u obliku Word dokumenta. Koristiti ovaj dokument kao šablon, te početi sa 5. poglavljem svoj izvještaj o projektu.
 */
 
-
-
-
-
-
 type covjek struct {
 	ime     string
 	prezime string
@@ -30,8 +25,8 @@ type covjek struct {
 
 type clan struct {
 	covjek
-	podignuteKnjige []string
-	limitNaDizanje  =3
+	podignuteKnjige    []string
+	limitNaDizanje     uint8
 	trenutnoPodignutih uint8
 }
 type radnik struct {
@@ -51,21 +46,19 @@ type zanr struct {
 }
 
 type polica struct {
-
-	zanr
+	zanr  string
 	index int
-
 }
 
-var Clanovi =[]clan {
-	clan{
+var Clanovi = []clan{
+	{
 		covjek:             covjek{ime: "Amel", prezime: "Smajic", godiste: "2002", JMBG: "2102200286041"},
 		podignuteKnjige:    []string{""},
 		limitNaDizanje:     3,
 		trenutnoPodignutih: 0,
 	},
-	clan{
-		covjek:             covjek{
+	{
+		covjek: covjek{
 			ime:     "Armin",
 			prezime: "Avdic",
 			godiste: "1999",
@@ -74,183 +67,374 @@ var Clanovi =[]clan {
 		podignuteKnjige:    []string{},
 		limitNaDizanje:     3,
 		trenutnoPodignutih: 0,
-	}
-
-
-
+	},
 }
 
+var Radnici = []radnik{
+	{
+		covjek: covjek{
+			ime:     "Tim",
+			prezime: "tibersom",
+			godiste: "1982",
+			JMBG:    "19820312310293",
+		},
+		pozicija: "Upravitelj",
+		smjena:   "Prva",
+	}, {
+		covjek: covjek{
+			ime:     "Andrey",
+			prezime: "Robines",
+			godiste: "1999",
+			JMBG:    "2102199991234",
+		},
+		pozicija: "Bibliotekar",
+		smjena:   "Prva",
+	}, {
+		covjek: covjek{
+			ime:     "Michael",
+			prezime: "Jeas",
+			godiste: "1983",
+			JMBG:    "120319839213",
+		},
+		pozicija: "Domar",
+		smjena:   "Prva",
+	},
+}
 
+var Knjige = []knjiga{
+	{
+		naziv:  "The Lion, the Witch and the Wardrobe",
+		autor:  "C. S. Lewis",
+		ID:     "",
+		Status: "na raspolaganju",
+	}, {
+		naziv:  "She: A History of Adventure",
+		autor:  "H. Rider Haggard",
+		ID:     "",
+		Status: "na raspolaganju",
+	}, {
+		naziv:  "The Da Vinci Code",
+		autor:  "Den Brown",
+		ID:     "",
+		Status: "na raspolaganju",
+	},
+}
+var Zanrovi = []zanr{
+	{
+		NazivZanra: "Fantazy",
+		ZnakZanra:  "F",
+	},
+	{
+		NazivZanra: "Adventure",
+		ZnakZanra:  "A",
+	},
+	{
+		NazivZanra: "History",
+		ZnakZanra:  "H",
+	},
+	{
+		NazivZanra: "Thriller",
+		ZnakZanra:  "T",
+	},
+}
+
+var Police = []polica{
+	{
+		zanr:  "Fantazy",
+		index: 0000,
+	},
+	{
+		zanr:  "Adventure",
+		index: 0001,
+	},
+	{
+		zanr:  "History",
+		index: 0002,
+	},
+	{
+		zanr:  "Thriller",
+		index: 0003,
+	},
+}
 
 func main() {
-	var active=1
+	var active = true
 
-
-
-
-	for 1==active {
+	for active {
 		var opcija = 0
-		// fmt.Printf("")
+		//fmt.Printf("")
 		fmt.Printf("Dobro dosli u biblioteku\n")
 		fmt.Printf("Molimo odaberite bazu koju trebate urediti\n")
-		fmt.Printf("1.) Korisnika")
-		fmt.Printf("2.) Zaposlenika")
-		fmt.Printf("3.) Knjiga")
-		fmt.Printf("4.) Zanrova")
-		fmt.Printf("5.) Polica")
-		fmt.Printf("6.) Exit")
-		fmt.Scan(opcija)
+		fmt.Printf("1.) Korisnika\n")
+		fmt.Printf("2.) Zaposlenika\n")
+		fmt.Printf("3.) Knjiga\n")
+		fmt.Printf("4.) Zanrova\n")
+		fmt.Printf("5.) Polica\n")
+		fmt.Printf("6.) Exit\n")
+
+		fmt.Scan(&opcija)
+
 		switch opcija {
-		odluka2 int
 
 		case 1:
-		koeisnik()
-			break
+			korisnikf()
+
 		case 2:
-			radnik()
-			break
+			radnikf()
+
 		case 3:
-			knjiga()
-			break
+			knjigaf()
+
 		case 4:
-			zanr()
-			break
+			zanrf()
+
 		case 5:
-			polica()
-			break
+			policaf()
+
 		case 6:
-			active=0
-			break
-		default		
-		errore()
+			active = false
+
+		default:
+			errore()
 		}
 	}
-}
-func errore(){
 
+}
+func errore() {
 
 	fmt.Printf("Molimo unesite tacan podatak \n")
 }
 
-func Manu2 (baza string)(opcija2 int){
+func Manu2(baza string) (opcija2 int) {
 
-	fmt.Printf("Dobro dosli u bazu",baza,"\n")
+	fmt.Printf("Dobro dosli u bazu %v \n", baza)
 	fmt.Printf("Molimo odaberite zeljenu opciju\n")
-	fmt.Printf("1.) Unesi",baza,"\n")
-	fmt.Printf("2.) Izmijeni",baza,"\n")
-	fmt.Printf("3.) Pregledaj",baza,"\n")
-	fmt.Printf("4.) Izbrisi",baza,"\n")
+	fmt.Printf("1.) Unesi %v\n", baza)
+	fmt.Printf("2.) Izmijeni %v\n", baza)
+	fmt.Printf("3.) Pregledaj %v\n", baza)
+	fmt.Printf("4.) Izbrisi %v\n", baza)
 	fmt.Printf("5.) Exit")
-	fmt.Scan(opcija2)
+	fmt.Scan(&opcija2)
 
-	return opcija2
+	return
 }
 
-func korisnik(){
-	var opcija=Manu2("Korisnika")
-	
-	var active =1
-	switch opcija {
-	case 1:
+func korisnikf() {
 
-		break
-	case 2:
-		break
-	case 3:
-		break
-	case 4:
-		break
-	case 5:
-		active=0
-		break
-	default:
-		errore()
+	var active bool = true
+	for active {
+
+		var opcija = Manu2("Korisnika")
+		fmt.Printf("odabir je: %v", opcija)
+
+		switch opcija {
+		case 1:
+			UnosKorisnika()
+		case 2:
+
+		case 3:
+			PregledajKorisnike()
+		case 4:
+
+		case 5:
+			active = false
+
+		default:
+			errore()
+		}
+	}
+}
+func line() {
+	fmt.Printf("\n-------------------------------------------------------------------------------\n")
+
+}
+func PregledajKorisnike() {
+	for i, val := range Clanovi {
+		line()
+		fmt.Printf("\nIme korisnika je: %v \n", val.ime)
+		fmt.Printf("Prezime korisnika je: %v \n", val.prezime)
+		fmt.Printf("Godiste korisnika je: %v \n", val.godiste)
+		fmt.Printf("Jmbg korisnika je: %v \n", val.JMBG)
+		if val.trenutnoPodignutih == 0 {
+			fmt.Printf("Korisnik nema podignutih knjiga i moze da podigne jos %v knjiga\n\n", val.limitNaDizanje)
+
+		} else {
+			fmt.Printf("Korisnik ima %v podignutih knjiga i moze podignuti %v jos\n\n ", val.trenutnoPodignutih, (val.limitNaDizanje - val.trenutnoPodignutih))
+
+		}
+		line()
+		i++
+	}
+
+}
+
+func UnosKorisnika() {
+	var n = len(Clanovi)
+	fmt.Printf("\nMolimo unesite podatke novog Korisnika : \n")
+	line()
+	fmt.Printf("Ime korisnika : \n")
+	fmt.Scanf(Clanovi[n].ime)
+	fmt.Printf("Prezime korisnika : \n")
+	fmt.Scanf(Clanovi[n].prezime)
+	fmt.Printf("Godiste korisnika :\n")
+	fmt.Scanf(Clanovi[n].godiste)
+	fmt.Printf("JMBG korisnika : \n")
+	fmt.Scanf(Clanovi[n].JMBG)
+	fmt.Printf("Unesite limit na dizanje (int) : \n")
+	fmt.Scan(Clanovi[n].limitNaDizanje)
+
+}
+func radnikf() {
+
+	var active = true
+	for active {
+		var opcija = Manu2("Zaposlenika")
+
+		switch opcija {
+
+		case 1:
+
+		case 2:
+
+		case 3:
+			pregledRadnika()
+		case 4:
+
+		case 5:
+			active = false
+
+		default:
+			errore()
+		}
 	}
 }
 
-func radnik(){
+func pregledRadnika() {
+	fmt.Printf("\nLista radnika:\n")
+	line()
 
-	opcija=Manu2("Zaposlenika")
-	var active =1
-	switch opcija {
-	case 1:
-		break
-	case 2:
-		break
-	case 3:
-		break
-	case 4:
-		break
-	case 5:
-		active=0
-		break
-	default:
-		errore()
+	for i, val := range Radnici {
+		line()
+		fmt.Printf("\nIme : %v\n", val.ime)
+		fmt.Printf("Prezime : %v\n", val.prezime)
+		fmt.Printf("Godiste : %v\n", val.godiste)
+		fmt.Printf("Jmbg : %v\n", val.JMBG)
+		fmt.Printf("Pozicja : %v\n", val.pozicija)
+		fmt.Printf("Smjena : %v\n", val.smjena)
+		line()
+		i++
+	}
+
+}
+
+func knjigaf() {
+
+	var active = true
+	for active {
+
+		var opcija = Manu2("Knjigu")
+		switch opcija {
+		case 1:
+
+		case 2:
+
+		case 3:
+			PregledKnjiga()
+		case 4:
+
+		case 5:
+			active = false
+
+		default:
+			errore()
+		}
 	}
 }
 
-func knjiga(){
+func PregledKnjiga() {
+	fmt.Printf("\nLista knjiga : \n")
+	line()
+	for i, val := range Knjige {
 
-	opcija=Manu2("Knjigu")
-	var active =1
-	switch opcija {
-	case 1:
-		break
-	case 2:
-		break
-	case 3:
-		break
-	case 4:
-		break
-	case 5:
-		active=0
-		break
-	default:
-		errore()
+		fmt.Printf("\nNaziv knjige je : %v\n", val.naziv)
+		fmt.Printf("Autor knjige je : %v\n", val.autor)
+		fmt.Printf("Id knjige je : %v\n", val.ID)
+		fmt.Printf("Status knjige je : %v\n", val.Status)
+		line()
+		i++
+	}
+
+}
+
+func zanrf() {
+
+	var active bool = true
+	for active {
+		var opcija = Manu2("Zanr")
+
+		switch opcija {
+		case 1:
+
+		case 2:
+
+		case 3:
+			PregledZanrova()
+		case 4:
+
+		case 5:
+			active = false
+
+		default:
+			errore()
+		}
 	}
 }
 
-func zanr(){
+func PregledZanrova() {
+	fmt.Printf("\nPregled zanrova\n")
+	line()
 
+	for i, val := range Zanrovi {
+		fmt.Printf("NAziv zanra je : %v \n", val.NazivZanra)
+		fmt.Printf("Kod zanra je : %v \n\n", val.ZnakZanra)
+		line()
 
-	opcija=Manu2("Zanr")
-	var active =1
-	switch opcija {
-	case 1:
-		break
-	case 2:
-		break
-	case 3:
-		break
-	case 4:
-		break
-	case 5:
-		active=0
-		break
-	default:
-		errore()
+		i++
+	}
+
+}
+func policaf() {
+
+	var active = true
+	for active {
+		var opcija = Manu2("Policu")
+
+		switch opcija {
+
+		case 1:
+
+		case 2:
+
+		case 3:
+			PregledPolica()
+		case 4:
+
+		case 5:
+			active = false
+
+		default:
+			errore()
+		}
 	}
 }
+func PregledPolica() {
 
-func polica(){
-
-
-	Manu2("Policu")
-	var active =1
-	switch opcija {
-	case 1:
-		break
-	case 2:
-		break
-	case 3:
-		break
-	case 4:
-		break
-	case 5:
-		active=0
-		break
-	default:
-		errore()
+	fmt.Printf("\n\nPregled polica\n")
+	line()
+	for i, val := range Police {
+		fmt.Printf("Zanr police je: %v\n", val.zanr)
+		fmt.Printf("Index police je : %v\n", val.index)
+		line()
+		i++
 	}
-	
 }
