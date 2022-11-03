@@ -176,19 +176,19 @@ func main() {
 		switch options {
 
 		case 1:
-			userf(Members)
+			userf(&Members)
 
 		case 2:
-			workerf(Workers)
+			workerf(&Workers)
 
 		case 3:
-			bookf(Books)
+			bookf(&Books)
 
 		case 4:
-			genref(Genres)
+			genref(&Genres)
 
 		case 5:
-			shelff(shelves)
+			shelff(&shelves)
 
 		case 6:
 			active = false
@@ -219,7 +219,7 @@ func Manu2(base string) (option2 int) {
 	return
 }
 
-func userf(User []member) {
+func userf(User *[]member) {
 
 	var active bool = true
 	for active {
@@ -231,11 +231,14 @@ func userf(User []member) {
 		case 1:
 			UserInput(User)
 		case 2:
-
+			var name string
+			fmt.Print("JMBG OF the user you wish to modify")
+			fmt.Scan(&name)
+			UserModify(User, name)
 		case 3:
 			BrowseUsers(User)
 		case 4:
-
+			UserDellet(User)
 		case 5:
 			active = false
 
@@ -249,9 +252,46 @@ func line() {
 
 }
 
-func BrowseUsers(Members []member) {
-	for i, val := range Members {
+func UserDellet(Members *[]member) {
+	var i int
+	fmt.Print("\n Index OF the targeted User : ")
+	fmt.Scan(&i)
+	temp := make([]member, 0)
+	temp = append(temp, (*Members)[:i]...)
+	temp = append(temp, (*Members)[i+1:]...)
+	(*Members) = temp
+
+}
+
+func UserModify(Members *[]member, jmbg string) {
+
+	for i, val := range *Members {
+		if val.JMBG == jmbg {
+
+			line()
+			fmt.Printf("User name : \n")
+			fmt.Scan(&val.name)
+			fmt.Printf("User last name : \n")
+			fmt.Scan(&val.lastname)
+			fmt.Printf("User age :\n")
+			fmt.Scan(&val.year)
+			fmt.Printf("User JMBG : \n")
+			fmt.Scan(&val.JMBG)
+			fmt.Printf("Enter lifting limit (int) : \n")
+			fmt.Scan(&val.limitUpRaise)
+			line()
+			(*Members)[i] = val
+		}
+
+		i++
+	}
+
+}
+
+func BrowseUsers(Members *[]member) {
+	for i, val := range *Members {
 		line()
+		fmt.Printf("\nUser index is: %v \n", i)
 		fmt.Printf("\nUser name is: %v \n", val.name)
 		fmt.Printf("The user's last name is: %v \n", val.lastname)
 		fmt.Printf("The user's age is: %v \n", val.year)
@@ -269,25 +309,43 @@ func BrowseUsers(Members []member) {
 
 }
 
-func UserInput(Members []member) {
-	var n = len(Members)
-	fmt.Printf("\nPlease enter the information of the new User : \n")
+func UserInput(Members *[]member) {
+
+	fmt.Printf("nPlease enter the information of the new User : n")
 	line()
+
 	var name string
+	var lastname string
+	var age string
+	var JMBG string
+	var limit uint8
+
 	fmt.Printf("User name : \n")
-	fmt.Scanf(name)
-	Members[n].name = name
+	fmt.Scan(&name)
 	fmt.Printf("User last name : \n")
-	fmt.Scanf(Members[n].lastname)
+	fmt.Scan(&lastname)
 	fmt.Printf("User age :\n")
-	fmt.Scanf(Members[n].year)
+	fmt.Scan(&age)
 	fmt.Printf("User JMBG : \n")
-	fmt.Scanf(Members[n].JMBG)
+	fmt.Scan(&JMBG)
 	fmt.Printf("Enter lifting limit (int) : \n")
-	fmt.Scan(Members[n].limitUpRaise)
+	fmt.Scan(&limit)
+	temp := member{
+		man: man{
+
+			name:     name,
+			lastname: lastname,
+			year:     age,
+			JMBG:     JMBG,
+		},
+		limitUpRaise:    limit,
+		currentlyRaised: 0,
+	}
+
+	*Members = append(*Members, temp)
 
 }
-func workerf(Worker []worker) {
+func workerf(Worker *[]worker) {
 
 	var active = true
 	for active {
@@ -296,13 +354,16 @@ func workerf(Worker []worker) {
 		switch option {
 
 		case 1:
-
+			WorkerInput(Worker)
 		case 2:
-
+			var name string
+			fmt.Printf("\nGet JMBG OF The worker zou want to modify :")
+			fmt.Scan(&name)
+			WorkerModify(Worker, name)
 		case 3:
 			viewWorker(Worker)
 		case 4:
-
+			WorkerDellet(Worker)
 		case 5:
 			active = false
 
@@ -311,13 +372,78 @@ func workerf(Worker []worker) {
 		}
 	}
 }
+func WorkerDellet(plc *[]worker) {
+	var i int
+	fmt.Print("\n Index OF the targeted worker : ")
+	fmt.Scan(&i)
+	temp := make([]worker, 0)
+	temp = append(temp, (*plc)[:i]...)
+	temp = append(temp, (*plc)[i+1:]...)
+	(*plc) = temp
 
-func viewWorker(Workers []worker) {
+}
+
+func WorkerModify(Workesr *[]worker, jmbg string) {
+
+	for i, val := range *Workesr {
+		if val.JMBG == jmbg {
+
+			line()
+			fmt.Printf("User name : \n")
+			fmt.Scan(&val.name)
+			fmt.Printf("User last name : \n")
+			fmt.Scan(&val.lastname)
+			fmt.Printf("User age :\n")
+			fmt.Scan(&val.year)
+			fmt.Printf("User JMBG : \n")
+			fmt.Scan(&val.JMBG)
+			fmt.Printf("Enter workesr shift : \n")
+			fmt.Scan(&val.shift)
+
+			fmt.Printf("Enter workers possition : \n")
+			fmt.Scan(&val.position)
+			line()
+			(*Workesr)[i] = val
+		}
+
+		i++
+	}
+
+}
+
+func WorkerInput(Worker *[]worker) {
+
+	line()
+	var temp worker
+	fmt.Printf("User name :\n")
+	fmt.Scan(&temp.name)
+
+	fmt.Printf("User lastname :\n")
+	fmt.Scan(&temp.lastname)
+
+	fmt.Printf("User age :\n")
+	fmt.Scan(&temp.year)
+
+	fmt.Printf("User JMBG :\n")
+	fmt.Scan(&temp.JMBG)
+
+	fmt.Printf("User position :\n")
+	fmt.Scan(&temp.position)
+
+	fmt.Printf("User shift :\n")
+	fmt.Scan(&temp.shift)
+
+	*Worker = append(*Worker, temp)
+	line()
+}
+
+func viewWorker(Workers *[]worker) {
 	fmt.Printf("\nList of workers:\n")
 	line()
 
-	for i, val := range Workers {
+	for i, val := range *Workers {
 		line()
+		fmt.Printf("\nWorkers index : %v\n", i)
 		fmt.Printf("\nName : %v\n", val.name)
 		fmt.Printf("Surname : %v\n", val.lastname)
 		fmt.Printf("Year : %v\n", val.year)
@@ -330,7 +456,7 @@ func viewWorker(Workers []worker) {
 
 }
 
-func bookf(Books []book) {
+func bookf(Books *[]book) {
 
 	var active = true
 	for active {
@@ -338,13 +464,17 @@ func bookf(Books []book) {
 		var option = Manu2("Book")
 		switch option {
 		case 1:
-
+			BookInput(Books)
 		case 2:
+			var ID string
+			fmt.Print("\nID of the book: ")
+			fmt.Scan(ID)
 
+			BookModify(Books, ID)
 		case 3:
 			ViewBook(Books)
 		case 4:
-
+			BookDellet(Books)
 		case 5:
 			active = false
 
@@ -353,23 +483,66 @@ func bookf(Books []book) {
 		}
 	}
 }
+func BookDellet(plc *[]book) {
+	var i int
+	fmt.Print("\n Index OF the targeted book : ")
+	fmt.Scan(&i)
+	temp := make([]book, 0)
+	temp = append(temp, (*plc)[:i]...)
+	temp = append(temp, (*plc)[i+1:]...)
+	(*plc) = temp
 
-func ViewBook(Books []book) {
+}
+func BookModify(Books *[]book, Ident string) {
+	for i, val := range *Books {
+
+		if val.ID == Ident {
+			line()
+			fmt.Print("\nName of Books autor : ")
+			fmt.Scan(val.author)
+			fmt.Print("\nName of the book : ")
+			fmt.Scan(val.title)
+			fmt.Print("\nID of the book : ")
+			fmt.Scan(val.ID)
+			line()
+			(*Books)[i] = val
+
+		}
+
+		i++
+	}
+
+}
+func BookInput(Books *[]book) {
+	line()
+	var temp book
+	fmt.Printf("\nUnesite ime autora knjige \n")
+	fmt.Scan(&temp.author)
+	fmt.Printf("\nUnesite ime knjige \n")
+	fmt.Scan(&temp.title)
+	fmt.Printf("\nUnesite ID knjige \n")
+	fmt.Scan(&temp.ID)
+	temp.Status = "available"
+	*Books = append(*Books, temp)
+	line()
+}
+
+func ViewBook(Books *[]book) {
 	fmt.Printf("\nList of books : \n")
 	line()
-	for i, val := range Books {
-
+	for i, val := range *Books {
+		fmt.Printf("\nThe inex of the book is : %v\n", i)
 		fmt.Printf("\nThe name of the book is : %v\n", val.title)
-		fmt.Printf("The author of the book is : %v\n", val.author)
-		fmt.Printf("Id of the book is : %v\n", val.ID)
-		fmt.Printf("Book status is : %v\n", val.Status)
+		fmt.Printf("\nThe author of the book is : %v\n", val.author)
+		fmt.Printf("\nId of the book is : %v\n", val.ID)
+		fmt.Printf("\nBook status is : %v\n", val.Status)
 		line()
 		i++
 	}
 
 }
 
-func genref(Genres []genre) {
+func genref(Genres *[]genre) {
 
 	var active bool = true
 	for active {
@@ -377,13 +550,16 @@ func genref(Genres []genre) {
 
 		switch option {
 		case 1:
-
+			GenreInput(Genres)
 		case 2:
-
+			var Name string
+			print("Name of the genre:")
+			fmt.Scan(Name)
+			ModifyDenre(Genres, Name)
 		case 3:
 			GenreView(Genres)
 		case 4:
-
+			GanreDellet(Genres)
 		case 5:
 			active = false
 
@@ -392,21 +568,59 @@ func genref(Genres []genre) {
 		}
 	}
 }
+func GanreDellet(plc *[]genre) {
+	var i int
+	fmt.Print("\n Index OF the genre worker : ")
+	fmt.Scan(&i)
+	temp := make([]genre, 0)
+	temp = append(temp, (*plc)[:i]...)
+	temp = append(temp, (*plc)[i+1:]...)
+	(*plc) = temp
 
-func GenreView(Genres []genre) {
+}
+func ModifyDenre(Genre *[]genre, Name string) {
+
+	for i, val := range *Genre {
+
+		if val.NameZanra == Name {
+			line()
+			fmt.Print("Name :")
+			fmt.Scan(val.NameZanra)
+			fmt.Print("\nSign : ")
+			fmt.Scan(val.ZnakZanra)
+			line()
+
+			(*Genre)[i] = val
+		}
+		i++
+	}
+
+}
+func GenreInput(Ganre *[]genre) {
+	var temp genre
+	line()
+	fmt.Print(" \nName of the ganre:\n")
+	fmt.Scan(&temp.NameZanra)
+	fmt.Print("\n Sign of the ganre is:\n")
+	fmt.Scan(&temp.ZnakZanra)
+	line()
+	*Ganre = append(*Ganre, temp)
+}
+func GenreView(Genres *[]genre) {
 	fmt.Printf("\nView of genres\n")
 	line()
 
-	for i, val := range Genres {
-		fmt.Printf("Genre NAME is : %v \n", val.NameZanra)
-		fmt.Printf("Genre code is : %v \n\n", val.ZnakZanra)
+	for i, val := range *Genres {
+		fmt.Printf("\nGenre index is : %v \n", i)
+		fmt.Printf("\nGenre NAME is : %v \n", val.NameZanra)
+		fmt.Printf("\nGenre code is : %v \n\n", val.ZnakZanra)
 		line()
 
 		i++
 	}
 
 }
-func shelff(Shelf []shelf) {
+func shelff(Shelf *[]shelf) {
 
 	var active = true
 	for active {
@@ -415,13 +629,16 @@ func shelff(Shelf []shelf) {
 		switch option {
 
 		case 1:
-
+			ShelfInput(Shelf)
 		case 2:
-
+			var IND int
+			fmt.Print("\nIndex of the shelf pls (int):")
+			fmt.Scan(IND)
+			ShelfModify(Shelf, IND)
 		case 3:
 			ViewShelf(Shelf)
 		case 4:
-
+			ShelfDellet(Shelf)
 		case 5:
 			active = false
 
@@ -430,11 +647,50 @@ func shelff(Shelf []shelf) {
 		}
 	}
 }
-func ViewShelf(Shelf []shelf) {
+func ShelfDellet(plc *[]shelf) {
+	var i int
+	fmt.Print("\n Index OF the targeted shelf : ")
+	fmt.Scan(&i)
+	temp := make([]shelf, 0)
+	temp = append(temp, (*plc)[:i]...)
+	temp = append(temp, (*plc)[i+1:]...)
+	(*plc) = temp
+
+}
+func ShelfModify(Shelf *[]shelf, IND int) {
+	line()
+
+	for i, vla := range *Shelf {
+
+		if vla.index == IND {
+			fmt.Print("\nThe genre : ")
+			fmt.Scan(vla.genre)
+			(*Shelf)[i] = vla
+			line()
+
+		}
+
+		i++
+	}
+
+}
+
+func ShelfInput(Shelf *[]shelf) {
+	line()
+
+	var temp shelf
+	fmt.Print("\nShelfs genre is :")
+	fmt.Scan(&temp.genre)
+	fmt.Print("\nShelfs number is :")
+	fmt.Scan(&temp.index)
+	*Shelf = append(*Shelf, temp)
+}
+
+func ViewShelf(Shelf *[]shelf) {
 
 	fmt.Printf("\n\nList of shelves\n")
 	line()
-	for i, val := range Shelf {
+	for i, val := range *Shelf {
 		fmt.Printf("The genre of the shelf is: %v\n", val.genre)
 		fmt.Printf("Shelf index is : %v\n", val.index)
 		line()
